@@ -1,19 +1,13 @@
+import 'babel-polyfill'
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import './margin_padding_helper.css';
+import './index.css';
+
+//import _ from 'underscore'
+
+
 import React from 'react'
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
+import Root from './containers/Root'
 
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-
-import appReducer from './reducers/reducers'
-import AppContainer from './containers/appContainer';
-
-const store = createStore(appReducer)
-
-ReactDOM.render(
-    <Provider store={ store }>
-        <AppContainer title="Fetch Users"/>
-    </Provider>,
-    
-    document.getElementById('root')
-    
-)
+render(<Root />, document.getElementById('root'))
